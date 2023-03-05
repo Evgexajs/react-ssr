@@ -8,13 +8,13 @@ const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 module.exports = {
 
     // webpack optimization mode
-    mode: ( 'development' === process.env.NODE_ENV ? 'development' : 'production' ),
+    mode: ( 'production' === process.env.NODE_ENV ? 'production' : 'development' ),
 
     // entry files
-    entry: 'development' === process.env.NODE_ENV ? [
-        './src/index.dev.js', // in development
-    ] : [
+    entry: 'production' === process.env.NODE_ENV ? [
         './src/index.prod.js', // in production
+    ] : [
+        './src/index.dev.js', // in development
     ],
 
     // output files and chunks
